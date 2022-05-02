@@ -1,5 +1,7 @@
 # Notes
 
+### The description will be supplemented as we go along!
+
 MinSDK: 21
 
 Technologies used: MVVM, View Binding, Single Activity App..
