@@ -14,4 +14,4 @@ Libs used: Navigation, Android Architecture Components, Android Material..
 * Pressing each button plays the Ripple effect.
 * Supports a variety of screen sizes.
 
-###...###
+...
