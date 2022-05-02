@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">Notes</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="create_your_first_note">Create your first Note!</string>
+    <string name="search_button">Search note</string>
+    <string name="get_info_button">Get info</string>
+    <string name="add_note_button">Add note</string>
 </resources>
