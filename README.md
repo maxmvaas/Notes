@@ -2,7 +2,7 @@
 
 ### The description will be supplemented as we go along!
 
-MinSDK: 21
+MinSDK: 21 (Android 5.0 Lollipop)
 
 Technologies used: MVVM, View Binding, Single Activity App..
 
