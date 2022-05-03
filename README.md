@@ -15,3 +15,8 @@ Libs used: Navigation, Android Architecture Components, Android Material..
 * Supports a variety of screen sizes.
 
 ...
+
+## Add note screen:
+![Альтернативный текст](https://i.imgur.com/mF6KBoV.png)
+
+...
