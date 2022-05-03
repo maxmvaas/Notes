@@ -9,5 +9,18 @@
         android:id="@+id/notesListFragment"
         android:name="ru.maxmv.notes.presentation.notes_list.NotesListFragment"
         android:label="fragment_notes_list"
-        tools:layout="@layout/fragment_notes_list" />
+        tools:layout="@layout/fragment_notes_list" >
+        <action
+            android:id="@+id/action_notesListFragment_to_noteAddFragment"
+            app:destination="@id/noteAddFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/noteAddFragment"
+        android:name="ru.maxmv.notes.presentation.note_edit.NoteEditFragment"
+        android:label="fragment_note_add"
+        tools:layout="@layout/fragment_note_edit" >
+        <action
+            android:id="@+id/action_noteAddFragment_to_notesListFragment"
+            app:destination="@id/notesListFragment" />
+    </fragment>
 </navigation>

@@ -5,4 +5,9 @@
     <string name="search_button">Search note</string>
     <string name="get_info_button">Get info</string>
     <string name="add_note_button">Add note</string>
+    <string name="back">Back</string>
+    <string name="preview">Preview</string>
+    <string name="save">Save</string>
+    <string name="title">Title</string>
+    <string name="type_something">Type something…</string>
 </resources>

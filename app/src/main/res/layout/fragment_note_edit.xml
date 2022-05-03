@@ -1,88 +1,94 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/main"
-    tools:context=".presentation.notes_list.NotesListFragment">
+    android:orientation="vertical"
+    tools:context=".presentation.note_edit.NoteEditFragment">
 
     <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:elevation="0dp"
         android:background="@color/main"
-        app:layout_constraintTop_toTopOf="parent">
+        android:paddingBottom="@dimen/appbar_padding_bottom"
+        app:elevation="0dp">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:paddingHorizontal="@dimen/toolbar_padding_horizontal"
+            android:paddingVertical="@dimen/toolbar_title_padding_vertical"
             android:paddingBottom="@dimen/toolbar_padding_bottom">
 
-            <TextView
+            <ImageButton
+                android:id="@+id/button_back"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:paddingVertical="@dimen/toolbar_title_padding_vertical"
-                android:text="@string/app_name"
-                android:textColor="@color/white"
-                android:textSize="@dimen/toolbar_title_text_size"
+                android:background="@drawable/menu_button_ripple"
+                android:contentDescription="@string/back"
+                android:padding="@dimen/toolbar_menu_button_padding"
+                android:src="@drawable/ic_back"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintTop_toTopOf="parent"
+                app:tint="@color/white" />
 
             <ImageButton
-                android:id="@+id/button_search"
+                android:id="@+id/button_preview"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="@dimen/toolbar_first_button_margin_end"
                 android:background="@drawable/menu_button_ripple"
-                android:contentDescription="@string/search_button"
+                android:contentDescription="@string/preview"
                 android:padding="@dimen/toolbar_menu_button_padding"
-                android:src="@drawable/ic_search"
+                android:src="@drawable/ic_preview"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toStartOf="@id/button_save"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintTop_toTopOf="parent"
+                app:tint="@color/white" />
 
             <ImageButton
                 android:id="@+id/button_save"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:background="@drawable/menu_button_ripple"
-                android:contentDescription="@string/get_info_button"
+                android:contentDescription="@string/save"
                 android:padding="@dimen/toolbar_menu_button_padding"
-                android:src="@drawable/ic_info"
+                android:src="@drawable/ic_save"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintTop_toTopOf="parent"
+                app:tint="@color/white" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </com.google.android.material.appbar.AppBarLayout>
 
-    <TextView
-        android:id="@+id/text_view_empty"
+    <EditText
+        android:id="@+id/edit_text_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:fontFamily="@font/nunito_light"
-        android:text="@string/create_your_first_note"
-        android:textAlignment="center"
+        android:layout_marginHorizontal="@dimen/edit_text_margin_horizontal"
+        android:background="@null"
+        android:fontFamily="@font/nunito_regular"
+        android:hint="@string/title"
         android:textColor="@color/white"
-        android:textSize="@dimen/empty_notes_list_text_size"
-        app:drawableTopCompat="@drawable/img_empty"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:textColorHint="@color/hint"
+        android:textSize="@dimen/edit_text_title_size" />
 
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
+    <EditText
+        android:id="@+id/edit_text_content"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_margin="@dimen/fab_margin"
-        android:contentDescription="@string/add_note_button"
-        android:src="@drawable/ic_add"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:tint="@color/white" />
+        android:layout_marginHorizontal="@dimen/edit_text_margin_horizontal"
+        android:layout_marginTop="@dimen/edit_text_content_margin_top"
+        android:background="@null"
+        android:fontFamily="@font/nunito_regular"
+        android:hint="@string/type_something"
+        android:textColor="@color/white"
+        android:textColorHint="@color/hint"
+        android:textSize="@dimen/edit_text_content_size" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+</LinearLayout>

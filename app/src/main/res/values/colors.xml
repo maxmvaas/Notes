@@ -11,5 +11,5 @@
 
     <color name="main">#252525</color>
     <color name="button_background">#3B3B3B</color>
-
+    <color name="hint">#9A9A9A</color>
 </resources>

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <!--                   Toolbar                        -->
+    <!--               Toolbar   [Note List]               -->
     <dimen name="toolbar_padding_bottom">37dp</dimen>
     <dimen name="toolbar_padding_horizontal">24dp</dimen>
     <dimen name="toolbar_title_padding_vertical">10dp</dimen>
@@ -15,4 +15,10 @@
     <!--    Floating action button    -->
     <dimen name="fab_margin">46dp</dimen>
 
+    <!--       Edit note screen                         -->
+    <dimen name="appbar_padding_bottom">42dp</dimen>
+    <dimen name="edit_text_margin_horizontal">24dp</dimen>
+    <dimen name="edit_text_title_size">48sp</dimen>
+    <dimen name="edit_text_content_margin_top">40dp</dimen>
+    <dimen name="edit_text_content_size">23sp</dimen>
 </resources>
