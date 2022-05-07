@@ -9,14 +9,12 @@ Technologies used: MVVM, View Binding, Single Activity App..
 Libs used: Navigation, Android Architecture Components, Android Material..
 
 ## Empty note list screen:
-![Альтернативный текст](https://i.imgur.com/zjZYleS.png)
+![Альтернативный текст](https://i.imgur.com/SSLvzte.png)
 
 * Pressing each button plays the Ripple effect.
 * Supports a variety of screen sizes.
 
-...
-
 ## Add note screen:
-![Альтернативный текст](https://i.imgur.com/mF6KBoV.png)
+![Альтернативный текст](https://i.imgur.com/KWkwjF2.png)
 
 ...
