@@ -8,6 +8,7 @@
     tools:context=".presentation.notes_list.NotesListFragment">
 
     <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/app_bar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:elevation="0dp"
@@ -17,8 +18,8 @@
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:paddingHorizontal="@dimen/toolbar_padding_horizontal"
-            android:paddingBottom="@dimen/toolbar_padding_bottom">
+            android:layout_marginTop="20dp"
+            android:paddingHorizontal="@dimen/toolbar_padding_horizontal">
 
             <TextView
                 android:layout_width="wrap_content"
@@ -60,7 +61,17 @@
 
     </com.google.android.material.appbar.AppBarLayout>
 
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        tools:listitem="@layout/item_note"
+        app:layout_constraintTop_toBottomOf="@id/app_bar"
+        android:layout_marginHorizontal="@dimen/recycler_view_margin_horizontal" />
+
     <TextView
+        tools:visibility="gone"
         android:id="@+id/text_view_empty"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

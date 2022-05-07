@@ -12,4 +12,12 @@
     <color name="main">#252525</color>
     <color name="button_background">#3B3B3B</color>
     <color name="hint">#9A9A9A</color>
+
+    <!--       Cards colors         -->
+    <color name="first">#FD99FF</color>
+    <color name="second">#FF9E9E</color>
+    <color name="third">#91F48F</color>
+    <color name="fourth">#FFF599</color>
+    <color name="fifth">#9EFFFF</color>
+    <color name="sixth">#B69CFF</color>
 </resources>
