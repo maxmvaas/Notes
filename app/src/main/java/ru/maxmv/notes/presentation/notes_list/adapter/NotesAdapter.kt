@@ -2,7 +2,9 @@ package ru.maxmv.notes.presentation.notes_list.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
+
 import androidx.recyclerview.widget.RecyclerView
+
 import ru.maxmv.notes.data.Note
 import ru.maxmv.notes.databinding.ItemNoteBinding
 
