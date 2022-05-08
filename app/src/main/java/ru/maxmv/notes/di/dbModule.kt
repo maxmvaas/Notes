@@ -1,5 +1,6 @@
 package ru.maxmv.notes.di
 
+import androidx.room.Room
 import org.koin.android.ext.koin.androidApplication
 import org.koin.dsl.module
 
@@ -8,7 +9,11 @@ import ru.maxmv.notes.data.db.AppDatabase
 
 val dbModule = module {
     single {
-        AppDatabase.getInstance(androidApplication())
+        Room.databaseBuilder(
+            androidApplication(),
+            AppDatabase::class.java,
+            "notes"
+        ).fallbackToDestructiveMigration().build()
     }
 
     single {
