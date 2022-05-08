@@ -6,7 +6,7 @@ MinSDK: 21 (Android 5.0 Lollipop).
 
 Technologies used: MVVM, View Binding, Single Activity App..
 
-Libs used: Navigation, Android Architecture Components, Android Material..
+Libs used: Navigation, Android Architecture Components, Android Material, Koin (DI)..
 
 ## Empty note list screen:
 ![Альтернативный текст](https://i.imgur.com/SSLvzte.png)
