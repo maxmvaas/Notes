@@ -1,6 +1,7 @@
 package ru.maxmv.notes.presentation.notes_list
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -17,6 +18,8 @@ import ru.maxmv.notes.databinding.FragmentNotesListBinding
 import ru.maxmv.notes.presentation.notes_list.adapter.NoteListAdapter
 
 class NotesListFragment : Fragment() {
+
+    //TODO: Сделать поиск заметок, добавить контент в кнопку info.
 
     private val viewModel by viewModel<NotesListViewModel>()
 
@@ -54,6 +57,12 @@ class NotesListFragment : Fragment() {
 
         binding.fabAdd.setOnClickListener {
             val action = NotesListFragmentDirections.actionNotesListFragmentToNoteAddFragment()
+            findNavController().navigate(action)
+        }
+
+        adapter.onItemClick = { note ->
+            Log.d("CHECKING:", "CURRENT NOTE: $note")
+            val action = NotesListFragmentDirections.actionNotesListFragmentToNoteAddFragment(note)
             findNavController().navigate(action)
         }
     }

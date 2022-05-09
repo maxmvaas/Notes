@@ -62,33 +62,61 @@
                 app:layout_constraintTop_toTopOf="parent"
                 app:tint="@color/white" />
 
+            <ImageButton
+                android:id="@+id/button_edit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/menu_button_ripple"
+                android:contentDescription="@string/edit"
+                android:padding="@dimen/toolbar_menu_button_padding"
+                android:src="@drawable/ic_edit"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:tint="@color/white" />
+
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </com.google.android.material.appbar.AppBarLayout>
 
-    <EditText
-        android:id="@+id/edit_text_title"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginHorizontal="@dimen/edit_text_margin_horizontal"
-        android:background="@null"
-        android:fontFamily="@font/nunito_regular"
-        android:hint="@string/title"
-        android:textColor="@color/white"
-        android:textColorHint="@color/hint"
-        android:textSize="@dimen/edit_text_title_size" />
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_marginBottom="@dimen/appbar_padding_bottom"
+        android:layout_height="wrap_content">
 
-    <EditText
-        android:id="@+id/edit_text_content"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginHorizontal="@dimen/edit_text_margin_horizontal"
-        android:layout_marginTop="@dimen/edit_text_content_margin_top"
-        android:background="@null"
-        android:fontFamily="@font/nunito_regular"
-        android:hint="@string/type_something"
-        android:textColor="@color/white"
-        android:textColorHint="@color/hint"
-        android:textSize="@dimen/edit_text_content_size" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <EditText
+                android:id="@+id/edit_text_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/edit_text_margin_horizontal"
+                android:background="@null"
+                android:fontFamily="@font/nunito_regular"
+                android:hint="@string/title"
+                android:maxLength="60"
+                android:textColor="@color/white"
+                android:textColorHint="@color/hint"
+                android:textSize="@dimen/edit_text_title_size" />
+
+            <EditText
+                android:id="@+id/edit_text_content"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/edit_text_margin_horizontal"
+                android:layout_marginTop="@dimen/edit_text_content_margin_top"
+                android:background="@null"
+                android:fontFamily="@font/nunito_regular"
+                android:hint="@string/type_something"
+                android:textColor="@color/white"
+                android:textColorHint="@color/hint"
+                android:textSize="@dimen/edit_text_content_size" />
+
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
 
 </LinearLayout>

@@ -13,4 +13,7 @@ interface NoteDao {
 
     @Query("SELECT * FROM NoteEntity")
     fun getAll(): Flow<List<NoteEntity>>
+
+    @Update
+    suspend fun update(Note: NoteEntity)
 }

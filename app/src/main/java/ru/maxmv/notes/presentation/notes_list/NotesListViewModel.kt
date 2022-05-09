@@ -10,6 +10,7 @@ import kotlinx.coroutines.launch
 
 import ru.maxmv.notes.data.Note
 import ru.maxmv.notes.data.NoteRepository
+import ru.maxmv.notes.data.db.NoteEntity
 import ru.maxmv.notes.data.entityToNote
 
 class NotesListViewModel(private val noteRepository: NoteRepository) : ViewModel() {
