@@ -16,6 +16,7 @@
         android:layout_marginHorizontal="@dimen/note_item_title_margin_horizontal"
         android:layout_marginVertical="@dimen/note_item_title_margin_vertical"
         android:fontFamily="@font/nunito_regular"
+        android:maxLines="5"
         android:textColor="@color/black"
         android:textSize="@dimen/note_item_title_text_size"
         tools:text="Book Review : The Design of Everyday Things by Don Norman" />

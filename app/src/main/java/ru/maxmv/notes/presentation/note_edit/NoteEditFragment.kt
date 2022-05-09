@@ -10,6 +10,7 @@ import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 
 import org.koin.androidx.viewmodel.ext.android.viewModel
+import ru.maxmv.notes.R
 
 import ru.maxmv.notes.data.Note
 import ru.maxmv.notes.data.db.NoteEntity
@@ -98,5 +99,8 @@ class NoteEditFragment : Fragment() {
         binding.buttonEdit.visibility = View.GONE
         binding.editTextTitle.isEnabled = true
         binding.editTextContent.isEnabled = true
+        if (binding.editTextContent.text.isBlank()) {
+            binding.editTextContent.hint = getString(R.string.type_something)
+        }
     }
 }

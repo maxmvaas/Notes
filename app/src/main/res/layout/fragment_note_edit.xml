@@ -95,6 +95,8 @@
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="@dimen/edit_text_margin_horizontal"
                 android:background="@null"
+                android:maxLines="5"
+                android:inputType="textMultiLine"
                 android:fontFamily="@font/nunito_regular"
                 android:hint="@string/title"
                 android:maxLength="60"
