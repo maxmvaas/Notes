@@ -1,7 +1,6 @@
 package ru.maxmv.notes.presentation.notes_list
 
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -61,7 +60,6 @@ class NotesListFragment : Fragment() {
         }
 
         adapter.onItemClick = { note ->
-            Log.d("CHECKING:", "CURRENT NOTE: $note")
             val action = NotesListFragmentDirections.actionNotesListFragmentToNoteAddFragment(note)
             findNavController().navigate(action)
         }
