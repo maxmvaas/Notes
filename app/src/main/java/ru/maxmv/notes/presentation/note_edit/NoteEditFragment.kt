@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
@@ -35,9 +36,14 @@ class NoteEditFragment : Fragment() {
             viewModel.addNote(
                 Note(
                     binding.editTextTitle.text.toString(),
-                    binding.editTextContent.text.toString()
+                    binding.editTextContent.text.toString(),
+                    0
                 )
             )
+        }
+
+        binding.buttonBack.setOnClickListener {
+            findNavController().popBackStack()
         }
     }
 

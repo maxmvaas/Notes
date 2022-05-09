@@ -24,4 +24,6 @@
     <dimen name="note_item_title_margin_horizontal">45dp</dimen>
     <dimen name="note_item_title_margin_vertical">22dp</dimen>
     <dimen name="note_item_title_text_size">28sp</dimen>
+    <dimen name="note_item_margin_top">25dp</dimen>
+    <dimen name="note_item_corner_radius">10sp</dimen>
 </resources>
