@@ -14,10 +14,11 @@
         android:background="@color/main"
         android:paddingBottom="@dimen/appbar_padding_bottom"
         app:elevation="0dp">
+
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="@dimen/toolbar_margin_top"
             android:paddingHorizontal="@dimen/toolbar_padding_horizontal"
             android:paddingVertical="@dimen/toolbar_title_padding_vertical">
 
