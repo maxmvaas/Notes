@@ -33,13 +33,15 @@ class NoteEditFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         binding.buttonSave.setOnClickListener {
-            viewModel.addNote(
-                Note(
-                    binding.editTextTitle.text.toString(),
-                    binding.editTextContent.text.toString(),
-                    0
+            if (binding.editTextTitle.text.isNotBlank()) {
+                viewModel.addNote(
+                    Note(
+                        binding.editTextTitle.text.toString(),
+                        binding.editTextContent.text.toString(),
+                        0
+                    )
                 )
-            )
+            }
         }
 
         binding.buttonBack.setOnClickListener {
