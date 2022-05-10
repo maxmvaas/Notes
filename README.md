@@ -10,9 +10,8 @@ Libs used: Navigation, Android Architecture Components, Android Material, Koin (
 
 <details>
   <summary>Screenshots:</summary>
-  ## Screenshots:
-![Альтернативный текст](screenshots/empty.jpg)
   
+![Альтернативный текст](screenshots/empty.jpg)
 ![Альтернативный текст](screenshots/add_note.jpg)
 ![Альтернативный текст](screenshots/edit_note.jpg)
 ![Альтернативный текст](screenshots/note_list_2.jpg)
