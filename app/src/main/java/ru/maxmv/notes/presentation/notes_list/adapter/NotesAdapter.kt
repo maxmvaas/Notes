@@ -1,6 +1,7 @@
 package ru.maxmv.notes.presentation.notes_list.adapter
 
 import android.view.LayoutInflater
+import android.view.View
 import android.view.ViewGroup
 
 import androidx.recyclerview.widget.DiffUtil.calculateDiff
@@ -14,6 +15,8 @@ class NoteListAdapter : RecyclerView.Adapter<NoteListAdapter.NoteViewHolder>() {
     private var items = mutableListOf<Note>()
 
     var onItemClick: ((Note) -> Unit)? = null
+
+    var buttonDeleteClick: ((Note) -> Unit)? = null
 
     fun setItems(items: List<Note>) {
         val diffResult = calculateDiff(NoteDiffCallback(this.items, items))
@@ -40,6 +43,14 @@ class NoteListAdapter : RecyclerView.Adapter<NoteListAdapter.NoteViewHolder>() {
         holder.unbind()
     }
 
+    fun removeNote(note: Note) {
+        val indexToDelete = items.indexOfFirst { it.id == note.id }
+        if (indexToDelete != -1) {
+            items.removeAt(indexToDelete)
+            notifyItemRemoved(indexToDelete)
+        }
+    }
+
     override fun getItemCount() = items.size
 
     inner class NoteViewHolder(
@@ -50,9 +61,18 @@ class NoteListAdapter : RecyclerView.Adapter<NoteListAdapter.NoteViewHolder>() {
             itemView.setOnClickListener {
                 onItemClick?.invoke(note)
             }
+
+            itemView.setOnLongClickListener {
+                binding.buttonDelete.visibility = View.VISIBLE
+                return@setOnLongClickListener true
+            }
+
             binding.apply {
                 textViewTitle.text = note.title
                 cardView.setCardBackgroundColor(note.color)
+                buttonDelete.setOnClickListener {
+                    buttonDeleteClick?.invoke(note)
+                }
             }
         }
 

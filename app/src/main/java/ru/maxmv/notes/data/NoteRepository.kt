@@ -15,6 +15,10 @@ class NoteRepository(private val dao: NoteDao) {
         dao.insert(noteToEntity(note))
     }
 
+    suspend fun deleteNote(id: Int) {
+        dao.delete(id)
+    }
+
     fun update(note: NoteEntity) {
         CoroutineScope(Dispatchers.IO).launch {
             dao.update(note)

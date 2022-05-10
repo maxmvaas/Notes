@@ -39,9 +39,7 @@ class NotesListFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         loadColors()
-
         binding.recyclerView.adapter = adapter
-
         viewModel.notesLiveData.observe(viewLifecycleOwner) { notes ->
             var color = 0
             notes.forEach { note ->
@@ -53,15 +51,18 @@ class NotesListFragment : Fragment() {
             }
             notes?.let { showNotes(notes) }
         }
-
         binding.fabAdd.setOnClickListener {
             val action = NotesListFragmentDirections.actionNotesListFragmentToNoteAddFragment()
             findNavController().navigate(action)
         }
-
         adapter.onItemClick = { note ->
             val action = NotesListFragmentDirections.actionNotesListFragmentToNoteAddFragment(note)
             findNavController().navigate(action)
+        }
+
+        adapter.buttonDeleteClick = { note ->
+            viewModel.deleteNote(note.id)
+            adapter.removeNote(note)
         }
     }
 

@@ -12,6 +12,7 @@
     <color name="main">#252525</color>
     <color name="button_background">#3B3B3B</color>
     <color name="hint">#9A9A9A</color>
+    <color name="delete">#FF0000</color>
 
     <!--       Cards colors         -->
     <color name="first">#FD99FF</color>
