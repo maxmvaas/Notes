@@ -9,7 +9,7 @@ Technologies used: MVVM, View Binding, Single Activity App, Kotlin Coroutines, D
 Libs used: Navigation, Android Architecture Components, Android Material, Koin (DI)..
 
 ## Empty note list screen:
-![Альтернативный текст](https://i.imgur.com/SSLvzte.png)
+![Альтернативный текст](scheenshots/empty list.jpg)
 
 * Pressing each button plays the Ripple effect.
 * Supports a variety of screen sizes.
