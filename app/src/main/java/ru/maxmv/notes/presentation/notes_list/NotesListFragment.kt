@@ -1,5 +1,9 @@
 package ru.maxmv.notes.presentation.notes_list
 
+import android.app.AlertDialog
+import android.app.Dialog
+import android.graphics.Color
+import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -8,6 +12,7 @@ import android.view.ViewGroup
 import androidx.core.content.ContextCompat.getColor
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
+import com.google.android.material.dialog.MaterialAlertDialogBuilder
 
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
@@ -63,6 +68,13 @@ class NotesListFragment : Fragment() {
         adapter.buttonDeleteClick = { note ->
             viewModel.deleteNote(note.id)
             adapter.removeNote(note)
+        }
+
+        binding.buttonInfo.setOnClickListener {
+            MaterialAlertDialogBuilder(requireContext())
+                .setView(R.layout.popup_info)
+                .setBackground(ColorDrawable(Color.TRANSPARENT))
+                .show()
         }
     }
 

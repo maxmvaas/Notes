@@ -36,20 +36,6 @@
                 app:tint="@color/white" />
 
             <ImageButton
-                android:id="@+id/button_preview"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="@dimen/toolbar_first_button_margin_end"
-                android:background="@drawable/menu_button_ripple"
-                android:contentDescription="@string/preview"
-                android:padding="@dimen/toolbar_menu_button_padding"
-                android:src="@drawable/ic_preview"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toStartOf="@id/button_save"
-                app:layout_constraintTop_toTopOf="parent"
-                app:tint="@color/white" />
-
-            <ImageButton
                 android:id="@+id/button_save"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -81,8 +67,8 @@
 
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
-        android:layout_marginBottom="@dimen/appbar_padding_bottom"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/appbar_padding_bottom">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -95,11 +81,11 @@
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="@dimen/edit_text_margin_horizontal"
                 android:background="@null"
-                android:maxLines="5"
-                android:inputType="textMultiLine"
                 android:fontFamily="@font/nunito_regular"
                 android:hint="@string/title"
+                android:inputType="textMultiLine"
                 android:maxLength="60"
+                android:maxLines="5"
                 android:textColor="@color/white"
                 android:textColorHint="@color/hint"
                 android:textSize="@dimen/edit_text_title_size" />

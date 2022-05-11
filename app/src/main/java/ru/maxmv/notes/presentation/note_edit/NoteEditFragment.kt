@@ -87,7 +87,6 @@ class NoteEditFragment : Fragment() {
     private fun setStateEdit() {
         binding.buttonSave.visibility = View.GONE
         binding.editTextContent.hint = ""
-        binding.buttonPreview.visibility = View.GONE
         binding.buttonEdit.visibility = View.VISIBLE
         binding.editTextTitle.isEnabled = false
         binding.editTextContent.isEnabled = false
@@ -95,7 +94,6 @@ class NoteEditFragment : Fragment() {
 
     private fun setStateAdd() {
         binding.buttonSave.visibility = View.VISIBLE
-        binding.buttonPreview.visibility = View.VISIBLE
         binding.buttonEdit.visibility = View.GONE
         binding.editTextTitle.isEnabled = true
         binding.editTextContent.isEnabled = true

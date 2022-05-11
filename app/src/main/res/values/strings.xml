@@ -12,4 +12,6 @@
     <string name="type_something">Type something…</string>
     <string name="edit">Edit</string>
     <string name="delete">Delete</string>
+    <string name="popup_text">Designed by -\nRedesigned by -\nIllustrations -\nIcons -\nFont -</string>
+    <string name="made_by">Made by Maxim Vasilev with love</string>
 </resources>
