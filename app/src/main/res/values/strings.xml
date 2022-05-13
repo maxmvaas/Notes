@@ -12,6 +12,8 @@
     <string name="type_something">Type something…</string>
     <string name="edit">Edit</string>
     <string name="delete">Delete</string>
-    <string name="popup_text">Designed by -\nRedesigned by -\nIllustrations -\nIcons -\nFont -</string>
+    <string name="popup_text">Designed by - Divya Kelaskar\nRedesigned by - Maxim Vasilev\nIllustrations - i don`t know \nIcons - i don`t know\nFont - Google</string>
     <string name="made_by">Made by Maxim Vasilev with love</string>
+    <string name="note_not_found">Note not found. Try searching again.</string>
+    <string name="search_by_keyword">Search by the keyword...</string>
 </resources>

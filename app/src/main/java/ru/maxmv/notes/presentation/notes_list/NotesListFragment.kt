@@ -76,6 +76,20 @@ class NotesListFragment : Fragment() {
                 .setBackground(ColorDrawable(Color.TRANSPARENT))
                 .show()
         }
+
+        binding.buttonSearch.setOnClickListener {
+            binding.buttonInfo.visibility = View.GONE
+            binding.buttonSearch.visibility = View.GONE
+            binding.textViewTitle.visibility = View.GONE
+
+            binding.searchField.root.visibility = View.VISIBLE
+
+            binding.textViewEmpty.visibility = View.GONE
+
+            binding.textViewNotFound.visibility = View.VISIBLE
+
+            binding.recyclerView.visibility = View.GONE
+        }
     }
 
     override fun onResume() {

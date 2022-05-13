@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.textfield.TextInputLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:boxStrokeWidth="0dp"
+    app:boxStrokeWidthFocused="0dp"
+    app:endIconDrawable="@drawable/ic_clear"
+    app:endIconMode="clear_text"
+    app:endIconTint="@color/button_clear"
+    app:expandedHintEnabled="false"
+    app:hintAnimationEnabled="false"
+    app:hintEnabled="false">
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/search_field_shape"
+        android:fontFamily="@font/nunito_regular"
+        android:hint="@string/search_by_keyword"
+        android:paddingVertical="15dp"
+        android:paddingStart="38dp"
+        android:paddingEnd="38dp"
+        android:textColor="@color/white"
+        android:textColorHint="@color/hint"
+        android:textSize="20sp" />
+
+</com.google.android.material.textfield.TextInputLayout>
