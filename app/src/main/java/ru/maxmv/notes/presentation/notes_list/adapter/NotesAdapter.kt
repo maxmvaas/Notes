@@ -1,5 +1,6 @@
 package ru.maxmv.notes.presentation.notes_list.adapter
 
+import android.annotation.SuppressLint
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -15,7 +16,7 @@ class NoteListAdapter : RecyclerView.Adapter<NoteListAdapter.NoteViewHolder>() {
 
     private var items = mutableListOf<Note>()
 
-    var copyItems = mutableSetOf<Note>()
+    private var copyItems = mutableSetOf<Note>()
 
     var onItemClick: ((Note) -> Unit)? = null
 
@@ -54,6 +55,7 @@ class NoteListAdapter : RecyclerView.Adapter<NoteListAdapter.NoteViewHolder>() {
         }
     }
 
+    @SuppressLint("NotifyDataSetChanged")
     fun filter(queryText: String?) {
         copyItems.addAll(items)
         items.clear()

@@ -30,8 +30,8 @@ class NotesListViewModel(private val noteRepository: NoteRepository) : ViewModel
 
     private suspend fun loadNotes() {
         val notes = mutableListOf<Note>()
-        val noteEntities = noteRepository.getNotes()
-        noteEntities.collect { noteEntities ->
+        val notesCallback = noteRepository.getNotes()
+        notesCallback.collect { noteEntities ->
             notes.clear()
             noteEntities.forEach { noteEntity ->
                 notes.add(entityToNote(noteEntity))
