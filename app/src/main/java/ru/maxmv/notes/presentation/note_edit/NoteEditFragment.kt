@@ -18,8 +18,6 @@ import ru.maxmv.notes.databinding.FragmentNoteEditBinding
 
 class NoteEditFragment : Fragment() {
 
-    //TODO: Сделать кнопку предпросмотра доступной.
-
     private var _binding: FragmentNoteEditBinding? = null
     private val binding get() = _binding!!
 
@@ -74,7 +72,7 @@ class NoteEditFragment : Fragment() {
             }
         }
 
-        binding.buttonBack.setOnClickListener {
+        binding.buttonBack.root.setOnClickListener {
             findNavController().popBackStack()
         }
     }

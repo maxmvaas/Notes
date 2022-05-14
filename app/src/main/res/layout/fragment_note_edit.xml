@@ -22,18 +22,14 @@
             android:paddingHorizontal="@dimen/toolbar_padding_horizontal"
             android:paddingVertical="@dimen/toolbar_title_padding_vertical">
 
-            <ImageButton
+            <include
                 android:id="@+id/button_back"
+                layout="@layout/button_back"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:background="@drawable/menu_button_ripple"
-                android:contentDescription="@string/back"
-                android:padding="@dimen/toolbar_menu_button_padding"
-                android:src="@drawable/ic_back"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:tint="@color/white" />
+                app:layout_constraintTop_toTopOf="parent" />
 
             <ImageButton
                 android:id="@+id/button_save"

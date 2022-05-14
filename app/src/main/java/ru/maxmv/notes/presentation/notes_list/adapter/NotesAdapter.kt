@@ -12,7 +12,10 @@ import ru.maxmv.notes.databinding.ItemNoteBinding
 import ru.maxmv.notes.presentation.notes_list.NoteDiffCallback
 
 class NoteListAdapter : RecyclerView.Adapter<NoteListAdapter.NoteViewHolder>() {
+
     private var items = mutableListOf<Note>()
+
+    var copyItems = mutableSetOf<Note>()
 
     var onItemClick: ((Note) -> Unit)? = null
 
@@ -49,6 +52,21 @@ class NoteListAdapter : RecyclerView.Adapter<NoteListAdapter.NoteViewHolder>() {
             items.removeAt(indexToDelete)
             notifyItemRemoved(indexToDelete)
         }
+    }
+
+    fun filter(queryText: String?) {
+        copyItems.addAll(items)
+        items.clear()
+        if (queryText.isNullOrEmpty()) {
+            items.addAll(copyItems)
+        } else {
+            for (note in copyItems) {
+                if (note.title.contains(queryText, true) or note.text.contains(queryText, true)) {
+                    items.add(note)
+                }
+            }
+        }
+        notifyDataSetChanged()
     }
 
     override fun getItemCount() = items.size

@@ -1,7 +1,5 @@
 package ru.maxmv.notes.presentation.notes_list
 
-import android.app.AlertDialog
-import android.app.Dialog
 import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
@@ -10,8 +8,10 @@ import android.view.View
 import android.view.ViewGroup
 
 import androidx.core.content.ContextCompat.getColor
+import androidx.core.widget.addTextChangedListener
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
+
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 
 import org.koin.androidx.viewmodel.ext.android.viewModel
@@ -22,14 +22,13 @@ import ru.maxmv.notes.databinding.FragmentNotesListBinding
 import ru.maxmv.notes.presentation.notes_list.adapter.NoteListAdapter
 
 class NotesListFragment : Fragment() {
-
-    //TODO: Сделать поиск заметок, добавить контент в кнопку info.
-
     private val viewModel by viewModel<NotesListViewModel>()
 
     private var _binding: FragmentNotesListBinding? = null
     private val binding get() = _binding!!
+
     private val colors = mutableListOf<Int>()
+
     private val adapter = NoteListAdapter()
 
     override fun onCreateView(
@@ -43,8 +42,11 @@ class NotesListFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
         loadColors()
+
         binding.recyclerView.adapter = adapter
+
         viewModel.notesLiveData.observe(viewLifecycleOwner) { notes ->
             var color = 0
             notes.forEach { note ->
@@ -56,10 +58,12 @@ class NotesListFragment : Fragment() {
             }
             notes?.let { showNotes(notes) }
         }
+
         binding.fabAdd.setOnClickListener {
             val action = NotesListFragmentDirections.actionNotesListFragmentToNoteAddFragment()
             findNavController().navigate(action)
         }
+
         adapter.onItemClick = { note ->
             val action = NotesListFragmentDirections.actionNotesListFragmentToNoteAddFragment(note)
             findNavController().navigate(action)
@@ -78,17 +82,20 @@ class NotesListFragment : Fragment() {
         }
 
         binding.buttonSearch.setOnClickListener {
-            binding.buttonInfo.visibility = View.GONE
-            binding.buttonSearch.visibility = View.GONE
-            binding.textViewTitle.visibility = View.GONE
+            setStateSearch()
+        }
 
-            binding.searchField.root.visibility = View.VISIBLE
-
-            binding.textViewEmpty.visibility = View.GONE
-
-            binding.textViewNotFound.visibility = View.VISIBLE
-
-            binding.recyclerView.visibility = View.GONE
+        binding.searchField.textViewInput.addTextChangedListener {
+            binding.textViewNotFound.visibility = View.GONE
+            adapter.filter(it.toString())
+            if (adapter.itemCount == 0) {
+                binding.textViewNotFound.visibility = View.VISIBLE
+            }
+            if (it.toString().isBlank()) {
+                binding.searchField.root.setEndIconOnClickListener {
+                    setDefaultState()
+                }
+            }
         }
     }
 
@@ -114,11 +121,33 @@ class NotesListFragment : Fragment() {
     }
 
     private fun loadColors() {
-        colors.add(getColor(requireContext(), R.color.first))
-        colors.add(getColor(requireContext(), R.color.second))
-        colors.add(getColor(requireContext(), R.color.third))
-        colors.add(getColor(requireContext(), R.color.fourth))
-        colors.add(getColor(requireContext(), R.color.fifth))
-        colors.add(getColor(requireContext(), R.color.sixth))
+        colors.apply {
+            add(getColor(requireContext(), R.color.first))
+            add(getColor(requireContext(), R.color.second))
+            add(getColor(requireContext(), R.color.third))
+            add(getColor(requireContext(), R.color.fourth))
+            add(getColor(requireContext(), R.color.fifth))
+            add(getColor(requireContext(), R.color.sixth))
+        }
+    }
+
+    private fun setDefaultState() {
+        binding.apply {
+            buttonInfo.visibility = View.VISIBLE
+            buttonSearch.visibility = View.VISIBLE
+            textViewTitle.visibility = View.VISIBLE
+            searchField.root.visibility = View.GONE
+        }
+    }
+
+    private fun setStateSearch() {
+        binding.apply {
+            buttonInfo.visibility = View.GONE
+            buttonSearch.visibility = View.GONE
+            textViewTitle.visibility = View.GONE
+            textViewEmpty.visibility = View.GONE
+            searchField.root.visibility = View.VISIBLE
+            searchField.textViewInput.setText("")
+        }
     }
 }

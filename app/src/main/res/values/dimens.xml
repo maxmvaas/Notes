@@ -27,4 +27,9 @@
     <dimen name="note_item_title_text_size">28sp</dimen>
     <dimen name="note_item_margin_top">25dp</dimen>
     <dimen name="note_item_corner_radius">10sp</dimen>
+
+    <!--               Search field                          -->
+    <dimen name="search_field_text_size">20sp</dimen>
+    <dimen name="search_field_padding_horizontal">38dp</dimen>
+    <dimen name="search_field_padding_vertical">15dp</dimen>
 </resources>
