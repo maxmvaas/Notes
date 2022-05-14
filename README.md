@@ -18,6 +18,8 @@ Libs used: Navigation, Android Architecture Components, Android Material, Koin (
 ![Альтернативный текст](screenshots/note_list_1.jpg)
 ![Альтернативный текст](screenshots/removing.jpg)
 ![Альтернативный текст](screenshots/note_list_after_delete.jpg)
+ ![Альтернативный текст](screenshots/something_found.jpg)
+![Альтернативный текст](screenshots/nothing_found.jpg)
   
 </details>
 
