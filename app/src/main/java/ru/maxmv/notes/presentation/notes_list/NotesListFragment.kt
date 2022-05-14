@@ -101,6 +101,7 @@ class NotesListFragment : Fragment() {
 
     override fun onResume() {
         super.onResume()
+        setDefaultState()
         viewModel.getNotes()
     }
 
