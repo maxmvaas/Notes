@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+
     <color name="purple_200">#FFBB86FC</color>
     <color name="purple_500">#FF6200EE</color>
     <color name="purple_700">#FF3700B3</color>
@@ -7,4 +8,19 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+
+    <color name="main">#252525</color>
+    <color name="button_background">#3B3B3B</color>
+    <color name="hint">#9A9A9A</color>
+    <color name="delete">#FF0000</color>
+    <color name="button_clear">#CCCCCC</color>
+    <color name="approve">#30BE71</color>
+
+    <!--       Cards colors         -->
+    <color name="first">#FD99FF</color>
+    <color name="second">#FF9E9E</color>
+    <color name="third">#91F48F</color>
+    <color name="fourth">#FFF599</color>
+    <color name="fifth">#9EFFFF</color>
+    <color name="sixth">#B69CFF</color>
 </resources>

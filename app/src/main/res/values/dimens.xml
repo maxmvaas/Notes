@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!--               Toolbar   [Note List]               -->
+    <dimen name="toolbar_padding_horizontal">24dp</dimen>
+    <dimen name="toolbar_title_padding_vertical">10dp</dimen>
+    <dimen name="toolbar_title_text_size">43sp</dimen>
+    <dimen name="toolbar_first_button_margin_end">21dp</dimen>
+    <dimen name="toolbar_margin_top">20dp</dimen>
+    <dimen name="toolbar_menu_button_padding">13dp</dimen>
+
+    <!--            Notes list                             -->
+    <dimen name="empty_notes_list_text_size">20sp</dimen>
+    <dimen name="recycler_view_margin_horizontal">25dp</dimen>
+    <dimen name="fab_margin">46dp</dimen>
+
+    <!--       Edit note screen                         -->
+    <dimen name="appbar_padding_bottom">42dp</dimen>
+    <dimen name="edit_text_margin_horizontal">24dp</dimen>
+    <dimen name="edit_text_title_size">48sp</dimen>
+    <dimen name="edit_text_content_margin_top">40dp</dimen>
+    <dimen name="edit_text_content_size">23sp</dimen>
+
+    <!--                Note item                            -->
+    <dimen name="note_item_title_margin_horizontal">45dp</dimen>
+    <dimen name="note_item_title_margin_vertical">22dp</dimen>
+    <dimen name="note_item_title_text_size">28sp</dimen>
+    <dimen name="note_item_margin_top">25dp</dimen>
+    <dimen name="note_item_corner_radius">10sp</dimen>
+
+    <!--               Search field                          -->
+    <dimen name="search_field_text_size">20sp</dimen>
+    <dimen name="search_field_padding_horizontal">38dp</dimen>
+    <dimen name="search_field_padding_vertical">15dp</dimen>
+</resources>
