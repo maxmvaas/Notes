@@ -1,6 +1,5 @@
 <resources>
     <string name="app_name">Notes</string>
-    <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="create_your_first_note">Create your first Note!</string>
     <string name="search_button">Search note</string>
     <string name="get_info_button">Get info</string>
@@ -15,5 +14,8 @@
     <string name="popup_text">Designed by - Divya Kelaskar\nRedesigned by - Maxim Vasilev\nIllustrations - i don`t know \nIcons - i don`t know\nFont - Google</string>
     <string name="made_by">Made by Maxim Vasilev with love</string>
     <string name="note_not_found">Note not found. Try searching again.</string>
-    <string name="search_by_keyword">Search by the keyword...</string>
+    <string name="search_by_keyword">Search by the keyword…</string>
+    <string name="discard">Discard</string>
+    <string name="save_changes">Save changes?</string>
+    <string name="info">Info</string>
 </resources>

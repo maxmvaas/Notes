@@ -41,33 +41,39 @@ class NoteEditFragment : Fragment() {
 
         if (note != null) {
             setStateEdit()
-            binding.editTextTitle.setText(note.title)
-            binding.editTextContent.setText(note.text)
-            binding.buttonEdit.setOnClickListener {
-                setStateAdd()
-            }
-            binding.buttonSave.setOnClickListener {
-                if (binding.editTextTitle.text.isNotBlank()) {
-                    val noteToAdd = NoteEntity(
-                        note.id,
-                        binding.editTextTitle.text.toString(),
-                        binding.editTextContent.text.toString()
-                    )
-                    viewModel.updateNote(noteToAdd)
+            binding.apply {
+                editTextTitle.setText(note.title)
+                editTextContent.setText(note.text)
+                buttonEdit.setOnClickListener {
+                    setStateAdd()
+                }
+                buttonSave.setOnClickListener {
+                    if (editTextTitle.text.isNotBlank()) {
+                        if (editTextTitle.text.toString() != args.noteArg?.title || editTextContent.text.toString() != args.noteArg?.text) {
+                            val noteToAdd = NoteEntity(
+                                note.id,
+                                editTextTitle.text.toString(),
+                                editTextContent.text.toString()
+                            )
+                            viewModel.updateNote(noteToAdd)
+                        }
+                    }
                 }
             }
         } else {
             setStateAdd()
-            binding.buttonSave.setOnClickListener {
-                if (binding.editTextTitle.text.isNotBlank()) {
-                    viewModel.addNote(
-                        Note(
-                            0,
-                            binding.editTextTitle.text.toString(),
-                            binding.editTextContent.text.toString(),
-                            0
+            binding.apply {
+                buttonSave.setOnClickListener {
+                    if (editTextTitle.text.isNotBlank()) {
+                        viewModel.addNote(
+                            Note(
+                                0,
+                                editTextTitle.text.toString(),
+                                editTextContent.text.toString(),
+                                0
+                            )
                         )
-                    )
+                    }
                 }
             }
         }
@@ -83,20 +89,24 @@ class NoteEditFragment : Fragment() {
     }
 
     private fun setStateEdit() {
-        binding.buttonSave.visibility = View.GONE
-        binding.editTextContent.hint = ""
-        binding.buttonEdit.visibility = View.VISIBLE
-        binding.editTextTitle.isEnabled = false
-        binding.editTextContent.isEnabled = false
+        binding.apply {
+            buttonSave.visibility = View.GONE
+            editTextContent.hint = ""
+            buttonEdit.visibility = View.VISIBLE
+            editTextTitle.isEnabled = false
+            editTextContent.isEnabled = false
+        }
     }
 
     private fun setStateAdd() {
-        binding.buttonSave.visibility = View.VISIBLE
-        binding.buttonEdit.visibility = View.GONE
-        binding.editTextTitle.isEnabled = true
-        binding.editTextContent.isEnabled = true
-        if (binding.editTextContent.text.isBlank()) {
-            binding.editTextContent.hint = getString(R.string.type_something)
+        binding.apply {
+            buttonSave.visibility = View.VISIBLE
+            buttonEdit.visibility = View.GONE
+            editTextTitle.isEnabled = true
+            editTextContent.isEnabled = true
+            if (editTextContent.text.isBlank()) {
+                editTextContent.hint = getString(R.string.type_something)
+            }
         }
     }
 }

@@ -14,6 +14,7 @@
     <color name="hint">#9A9A9A</color>
     <color name="delete">#FF0000</color>
     <color name="button_clear">#CCCCCC</color>
+    <color name="approve">#30BE71</color>
 
     <!--       Cards colors         -->
     <color name="first">#FD99FF</color>

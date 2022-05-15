@@ -92,6 +92,7 @@ class NoteListAdapter : RecyclerView.Adapter<NoteListAdapter.NoteViewHolder>() {
                 cardView.setCardBackgroundColor(note.color)
                 buttonDelete.setOnClickListener {
                     buttonDeleteClick?.invoke(note)
+                    binding.buttonDelete.visibility = View.GONE
                 }
             }
         }
